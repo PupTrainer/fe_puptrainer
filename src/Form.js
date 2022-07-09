@@ -27,6 +27,8 @@ const Form = () => {
             <label for="html">Skill 3</label><br></br>
             <input type="checkbox" name="know-skills" value="Skill 4"/>
             <label for="html">Skill 4</label><br></br>
+            <input type="checkbox" name="know-skills" value="Skill 5"/>
+            <label for="html">Skill 5</label><br></br>
             <button>Register Pet</button>
         </div>
     )

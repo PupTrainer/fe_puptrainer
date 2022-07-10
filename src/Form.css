@@ -1,0 +1,20 @@
+.form-container {
+  border: 2px solid red;
+  margin: 2rem;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container > h2 {
+  border: 2px solid blue;
+  font-size: 3rem;
+}
+
+.form-container > input {
+  margin: 0.3rem;
+  height: 2rem;
+  width: 19rem;
+}/*# sourceMappingURL=Form.css.map */

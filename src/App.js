@@ -7,7 +7,6 @@ import About from './About'
 import { Route, Switch } from 'react-router-dom';
 const App = () => {
 
-
 return (
   <div>
     <Switch>

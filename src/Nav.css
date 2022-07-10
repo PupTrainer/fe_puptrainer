@@ -1,11 +1,11 @@
 .nav-container {
-  border: 2px solid blue;
+  border: 0.12rem solid blue;
   display: flex; }
 
 img {
-  height: 100px;
-  width: 100px;
-  margin-right: 350px; }
+  height: 6rem;
+  width: 6rem;
+  margin-right: 20rem; }
 
 .links {
   display: flex;
@@ -17,9 +17,9 @@ img {
   text-decoration: none;
   color: white;
   background-color: grey;
-  border-radius: 8px;
-  padding: 5px;
-  margin: 0px 100px; }
+  border-radius: 0.6rem;
+  padding: 0.3rem;
+  margin: 0rem 6rem; }
   .nav-button:hover {
     background-color: black; }
   .nav-button .active {

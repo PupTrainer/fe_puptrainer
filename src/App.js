@@ -10,7 +10,6 @@ const App = () => {
 
 return (
   <div>
-    <h2>APP</h2>
     <Switch>
       <Route exact path='/'>
         <Login />

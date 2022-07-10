@@ -1,0 +1,28 @@
+.nav-container {
+  border: 2px solid blue;
+  display: flex; }
+
+img {
+  height: 100px;
+  width: 100px;
+  margin-right: 350px; }
+
+.links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; }
+
+.nav-button {
+  text-decoration: none;
+  color: white;
+  background-color: grey;
+  border-radius: 8px;
+  padding: 5px;
+  margin: 0px 100px; }
+  .nav-button:hover {
+    background-color: black; }
+  .nav-button .active {
+    text-decoration: underline; }
+
+/*# sourceMappingURL=nav.css.map */

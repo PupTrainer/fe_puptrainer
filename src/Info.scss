@@ -1,0 +1,35 @@
+@mixin columnCenter {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+}
+
+.user-info-container {
+    @include columnCenter();
+
+    border: 2px solid blue;
+    margin: 2rem;
+    width: 30%;
+}
+
+.user-info > h2 {
+    border: 2px solid red;
+    font-size: 2.5rem;
+}
+
+.user-info-container > p {
+    border: 2px solid blue;
+}
+
+.user-info-container > button {
+    margin: 1rem;
+}
+
+.pets {
+    @include columnCenter();
+}
+
+hr {
+    width: 80%;
+}

@@ -1,15 +1,20 @@
 import React from 'react'
+import './Info.css'
 
 const Info = () => {
     return (
-        <div>
-            <h2>User Information</h2>
-            <p>Username</p>
-            <p>Email</p>
+        <div className='user-info-container'>
+            <div className='user-info'>
+                <h2>User Information</h2>
+                <p>Username</p>
+                <p>Email</p>
+            </div>
             <hr></hr>
-            <h3>Pets:</h3>
-            <button>Dog 1</button>
-            <button>Dog 2</button>
+            <div className='pets'>
+                <h3>Pets:</h3>
+                <button>Dog 1</button>
+                <button>Dog 2</button>
+            </div>
         </div>
     )
 }

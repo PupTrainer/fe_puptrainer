@@ -1,8 +1,9 @@
 import React from 'react'
+import './Form.scss'
 
 const Form = () => {
     return (
-        <div>
+        <div className='form-container'>
             <h2>Register Pets</h2>
             <input
             type='text'

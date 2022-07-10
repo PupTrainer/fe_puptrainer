@@ -1,0 +1,31 @@
+$btnColor: grey
+$btnText: white
+$btnActiveColor: black
+
+.nav-container
+  border: 0.12rem solid blue
+  display: flex
+
+img
+  height: 6rem
+  width: 6rem
+  margin-right: 20rem
+
+.links
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: center
+
+
+.nav-button
+  text-decoration: none
+  color: $btnText
+  background-color: $btnColor
+  border-radius: 0.6rem
+  padding: 0.3rem
+  margin: 0rem 6rem
+  &:hover
+    background-color: $btnActiveColor
+  .active
+    text-decoration: underline

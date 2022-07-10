@@ -1,0 +1,35 @@
+
+.login-page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 4rem;
+  margin-left: 2rem;
+}
+
+.input-container {
+  height: 20rem;
+  width: 20rem;
+  border: 1px solid black;
+  border-radius: 6px;
+  margin: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  height: 1.5rem;
+  width: 8rem;
+  margin: .8rem;
+}
+
+.button {
+  height: 1.2rem;
+  width: 6rem;
+  margin: .3rem;
+}

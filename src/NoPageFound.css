@@ -1,0 +1,18 @@
+.fof-header {
+  font-size: 2.5rem;
+}
+
+.fof-return-text {
+  font-size: 2.5rem;
+}
+
+.fof-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.fof-image {
+  border: 10px solid rgb(227, 206, 84);
+}/*# sourceMappingURL=NoPageFound.css.map */

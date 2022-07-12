@@ -9,55 +9,50 @@ import { gql, useQuery, useMutation } from '@apollo/client';
 
 const App = () => {
   
-//   let CREATE_USER;
-//   const createUserQuery = (username, email) => {
-//     return CREATE_USER = gql`
-//     mutation createUser($type: String!){
-//       createUser( input: {
-//         username: ${username}
-//         email: ${email}
-//       } ) {
-//         user {
-//           id
-//           username
-//           email
-//         }
-//       }
-//     }
-//     `
-//   }
+const [user, setUser] = useState({})
 
-//   let userUsername;
-//   let userEmail;
-// const [mutateFunction, { data, loading, error }] = useMutation(CREATE_USER, {
-//   variables: {
-//     username: `${userUsername}`,
-//     email: `${userEmail}`,
-//   },
-// });
-  
-const loginUser = (username, email) => {
-  var myHeaders = new Headers();
-      myHeaders.append("Content-Type", "application/json");
+const [username, setUsername] = useState('')
+const [email, setEmail] = useState('')
 
-var graphql = JSON.stringify({
-  query: "mutation {\n  createUser( input: {\n    username: \"Sammy_Sosa\"\n    email: \"cork@wrigley.com\"\n  } ) {\n    user {\n    id\n    username\n    email\n    }\n  }\n}",
-  variables: {}
-})
-var requestOptions = {
-  method: 'POST',
-  headers: myHeaders,
-  body: graphql,
-  redirect: 'follow'
-};
 
-fetch("https://pup-trainer-api.herokuapp.com/graphql", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
+const CREATE_USER = gql`
+
+mutation createUser(
+  $username: String!
+  $email: String!
+  ) {
+  createUser( input: {
+    username: $username
+    email: $email
+  } ) {
+    user {
+    id
+    username
+    email
+    }
+  }
 }
 
-const [user, setUser] = useState({})
+`
+
+const [createUser, { error }] = useMutation(CREATE_USER)
+  
+const loginUser = (username, email) => {
+  setUsername(username)
+  setEmail(email)
+
+  createUser({
+    variables: {
+      username: username,
+      email: email
+    }
+  })
+
+  if (error) {
+    console.log(error)
+  }
+}
+
 
 return (
   <div>

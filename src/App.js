@@ -35,7 +35,7 @@ mutation createUser(
 
 `
 
-const [createUser, { error }] = useMutation(CREATE_USER)
+const [createUser, { data, error }] = useMutation(CREATE_USER)
   
 const loginUser = (username, email) => {
   setUsername(username)
@@ -51,6 +51,9 @@ const loginUser = (username, email) => {
   if (error) {
     console.log(error)
   }
+    setUser(data.createUser.user)
+    console.log('data: ', data)
+    console.log('createUser: ', data.createUser.user)
 }
 
 

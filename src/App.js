@@ -68,7 +68,7 @@ return (
         <About />
       </Route>
       <Route render={() => {
-        <h1>Nothing here. Go back Home.</h1>
+        return <h1>Nothing here. Go back Home.</h1>
       }} />
     </Switch>
   </div>

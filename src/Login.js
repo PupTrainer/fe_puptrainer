@@ -7,7 +7,10 @@ const Login = ({loginUser}) => {
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
 
-
+    const clearInputs = () => {
+      setUsername('');
+      setEmail('');
+    }
 
     return (
         <div>
@@ -30,7 +33,10 @@ const Login = ({loginUser}) => {
                 onChange={(event) => setEmail(event.target.value)}
                 />
                 <Link to="/homepage">
-                  <button onClick={() => loginUser(username, email)}className='button'>Login</button>
+                  <button onClick={() => {
+                    loginUser(username, email);
+                    clearInputs();
+                  }}className='button'>Login</button>
                 </Link>
             </div>
         </div>

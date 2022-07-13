@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import './login.css'
 
 const Login = ({loginUser}) => {
@@ -20,15 +21,17 @@ const Login = ({loginUser}) => {
                 placeholder='Username'
                 value={username}
                 onChange={(event) => setUsername(event.target.value)}
-                />  
+                />
                 <input
                 className='input'
                 type='text'
                 placeholder='Email'
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
-                />       
-                <button onClick={() => loginUser(username, email)}className='button'>Login</button>  
+                />
+                <Link to="/homepage">
+                  <button onClick={() => loginUser(username, email)}className='button'>Login</button>
+                </Link>
             </div>
         </div>
         </div>

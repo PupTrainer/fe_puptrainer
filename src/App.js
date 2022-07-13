@@ -35,7 +35,7 @@ mutation createUser(
 
 `
 
-const [createUser, { data, error }] = useMutation(CREATE_USER)
+const [createUser, { data, error, loading }] = useMutation(CREATE_USER)
 
 const loginUser = (username, email) => {
   setUsername(username)
@@ -47,13 +47,12 @@ const loginUser = (username, email) => {
       email: email
     }
   })
+  .then((data) => setUser(data.data.createUser.user))
+
 
   if (error) {
     console.log(error)
   }
-    setUser(data.createUser.user) // this throws an error for createUser being undefined
-    console.log('data: ', data)
-    console.log('createUser: ', data.createUser.user)
 }
 
 
@@ -65,7 +64,7 @@ return (
       </Route>
       <Route path='/homepage'>
         < Nav />
-        < Homepage />
+        < Homepage user={user}/>
       </Route>
       <Route path='/about'>
         <About />

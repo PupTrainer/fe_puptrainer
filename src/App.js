@@ -8,7 +8,7 @@ import { Route, Switch } from 'react-router-dom';
 import { gql, useQuery, useMutation } from '@apollo/client';
 
 const App = () => {
-  
+
 const [user, setUser] = useState({})
 
 const [username, setUsername] = useState('')
@@ -36,7 +36,7 @@ mutation createUser(
 `
 
 const [createUser, { data, error }] = useMutation(CREATE_USER)
-  
+
 const loginUser = (username, email) => {
   setUsername(username)
   setEmail(email)
@@ -51,7 +51,7 @@ const loginUser = (username, email) => {
   if (error) {
     console.log(error)
   }
-    setUser(data.createUser.user)
+    setUser(data.createUser.user) // this throws an error for createUser being undefined
     console.log('data: ', data)
     console.log('createUser: ', data.createUser.user)
 }

@@ -82,7 +82,10 @@ const [createUser, { dataUser, errorUser, loadingUser }] = useMutation(CREATE_US
 
 const [createDog, { dataDog, errorDog, loadingDog }] = useMutation(CREATE_DOG)
 
-const [fetchUser, { dataFetchUser, errorFetchUser, loadingFetchuser }] = useLazyQuery(FETCH_USER)
+const [fetchUser, { dataFetchUser, errorFetchUser, loadingFetchuser }] = useLazyQuery(FETCH_USER, {
+  fetchPolicy: 'network-only',
+  nextFetchPolicy: 'network-only',
+})
 
 const loginUser = (username, email) => {
   setUsername(username)
@@ -101,6 +104,7 @@ const loginUser = (username, email) => {
     console.log(errorUser)
   }
 }
+
 
 const registerDog = (name,age,breed,skills) => {
   console.log(name,age,breed,skills)

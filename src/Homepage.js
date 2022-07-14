@@ -7,7 +7,7 @@ const Homepage = ({ user }) => {
     return (
         <div className='homepage-container'>
             <Info user={user}/>
-            <Form />
+            <Form user={user}/>
         </div>
     )
 }

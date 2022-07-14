@@ -97,8 +97,14 @@ const loginUser = (username, email) => {
       email: email
     }
   })
-  .then((data) => setUser(data.data.createUser.user))
-//.then(() => userQuery(user.id))
+  .then(data => {
+    return fetchUser({
+    variables: {
+      id: data.data.createUser.user.id
+    }
+  })})
+  .then((data) => {
+    setUser(data.data.fetchUser)})
 
   if (errorUser) {
     console.log(errorUser)

@@ -2,6 +2,12 @@ import React from 'react'
 import './Info.css'
 
 const Info = ({ user }) => {
+    const dogList = user.dogs.map((dog) => {
+        return <>
+            <button>{dog.name}</button> <br></br>
+            </>
+    })
+
     return (
         <div className='user-info-container'>
             <div className='user-info'>
@@ -12,8 +18,7 @@ const Info = ({ user }) => {
             <hr></hr>
             <div className='pets'>
                 <h3>Pets:</h3>
-                <button>Dog 1</button>
-                <button>Dog 2</button>
+                { dogList }
             </div>
         </div>
     )

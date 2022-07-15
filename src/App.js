@@ -104,8 +104,8 @@ const loginUser = (username, email) => {
     }
   })})
   .then((data) => {
-    setUser(data.data.fetchUser)})
-
+    setUser(data.data.fetchUser)
+})
   if (errorUser) {
     console.log(errorUser)
   }

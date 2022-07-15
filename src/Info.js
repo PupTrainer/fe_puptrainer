@@ -1,13 +1,13 @@
 import React from 'react'
 import './Info.css'
 
-const Info = () => {
+const Info = ({ user }) => {
     return (
         <div className='user-info-container'>
             <div className='user-info'>
                 <h2>User Information</h2>
-                <p>Username</p>
-                <p>Email</p>
+                <p>Username: {user.username}</p>
+                <p>Email: {user.email}</p>
             </div>
             <hr></hr>
             <div className='pets'>

@@ -4,28 +4,12 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
+import { ApolloClient, InMemoryCache, ApolloProvider, gql, useQuery, useMutation } from '@apollo/client';
 
 const client = new ApolloClient({
-  uri: 'https://flyby-gateway.herokuapp.com/',
+  uri: 'https://pup-trainer-api.herokuapp.com/graphql',
   cache: new InMemoryCache(),
 });
-
-client.query(
-  {
-    query: gql`
-    query GetLocations {
-      locations {
-        id
-        name
-        description
-        photo
-      }
-    }
-    `,
-  })
-  .then((result) => console.log(result))
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

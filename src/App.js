@@ -6,6 +6,7 @@ import About from './About'
 
 import { Route, Switch } from 'react-router-dom';
 import { gql, useQuery, useMutation, useLazyQuery } from '@apollo/client';
+import DogProfile from './DogProfile'
 
 const App = () => {
 
@@ -156,6 +157,16 @@ return (
       <Route path='/about'>
         <About />
       </Route>
+      <Route 
+          exact
+          path='/:id'
+          render={({ match }) => {
+        return (
+          <DogProfile
+            id={match.params.id}
+          />
+        )
+      }} />
       <Route render={() => {
         return <h1>Nothing here. Go back Home.</h1>
       }} />

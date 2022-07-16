@@ -4,9 +4,6 @@ import Form from './Form'
 import './Homepage.css'
 
 const Homepage = ({ user, registerDog }) => {
-
-
-
     return (
         <div className='homepage-container'>
             <Info user={user}/>
@@ -15,4 +12,4 @@ const Homepage = ({ user, registerDog }) => {
     )
 }
 
-export default Homepage
+export default Homepage;

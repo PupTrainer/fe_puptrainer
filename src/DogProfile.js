@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import './DogProfile.css'
 
 const DogProfile = ({ id, name, age, breed }) => {
+    
     const [ skills, setSkills ] = useState([])
+
     return(
         <div>
             <div className='dog-profile-container'>

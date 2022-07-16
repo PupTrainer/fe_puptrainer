@@ -2,6 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 import "./Nav.css";
 import logoImage from "./images/PupTrainerLogo.png"
+
 const Nav = () => {
     return (
         <div className="nav-container">
@@ -15,4 +16,4 @@ const Nav = () => {
     )
 }
 
-export default Nav
+export default Nav;

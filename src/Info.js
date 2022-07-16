@@ -11,7 +11,7 @@ const Info = ({ user }) => {
                 </div> 
                     </Link>
         })
-    
+        
         return (
             <div className='user-info-container'>
                 <div className='user-info'>
@@ -30,4 +30,4 @@ const Info = ({ user }) => {
     }
 }
 
-export default Info
+export default Info;

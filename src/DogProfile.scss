@@ -1,0 +1,71 @@
+.dog-profile-container,
+.dog-info-container {
+    width: 100%;
+    height: 100%;
+}
+
+.dog-info,
+.dog-known-skills-container {
+    // border: 2px solid blue;
+    width: 60%;
+    margin: 3rem;
+}
+
+.dog-profile-container {
+    display: flex;
+}
+
+.dog-training {
+    border: 2px solid orange;
+    width: 75%;
+    margin: 3rem;
+}
+
+.dog-training > .training-title {
+    text-align: center;
+}
+
+.skills {
+    border: 2px solid red;
+    margin: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+}
+
+.skills > h1 {
+    border: 2px solid red;
+    margin: 1rem;
+}
+
+.dog-info > img {
+    height: 20rem;
+    width: 20rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+}
+
+.dog-details {
+    border: 3px solid orange;
+    border-radius: 2rem;
+    text-align: center;
+    margin: 1rem;
+}
+
+.dog-known-skills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 2px solid blue;
+}
+
+.dog-known-skills > h1{
+    text-align: center;
+    border: 2px solid blue;
+    margin: 1rem;
+}
+
+.dog-known-skills-container > h1 {
+    text-align: center;
+}

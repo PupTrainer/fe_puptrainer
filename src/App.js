@@ -155,6 +155,7 @@ return (
         < Homepage user={user} registerDog={registerDog}/>
       </Route>
       <Route path='/about'>
+        < Nav />
         <About />
       </Route>
       <Route 
@@ -166,9 +167,12 @@ return (
               return dog.id === match.params.id
             })
         return (
-          <DogProfile
-            {...foundDog}
-          />
+          <>
+            < Nav />
+            <DogProfile
+              {...foundDog}
+            />
+          </>
         )
       }} />
       <Route render={() => {

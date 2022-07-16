@@ -7,9 +7,9 @@ const Nav = () => {
         <div className="nav-container">
           <img src={logoImage} alt="puptrainer Logo" />
           <div className='links'>
-              <NavLink className= "nav-button" to='/User'>User Profile</NavLink>
+              <NavLink className= "nav-button" to='/homepage'>User Profile</NavLink>
               <NavLink className= "nav-button" to='/About'>About</NavLink>
-              <NavLink className= "nav-button" to='/Login'>Logout</NavLink>
+              <NavLink className= "nav-button" to='/'>Logout</NavLink>
           </div>
         </div>
     )

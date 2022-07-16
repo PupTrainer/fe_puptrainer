@@ -161,9 +161,13 @@ return (
           exact
           path='/:id'
           render={({ match }) => {
+            console.log(match.params.id)
+            const foundDog = user.dogs.find((dog) => {
+              return dog.id === match.params.id
+            })
         return (
           <DogProfile
-            id={match.params.id}
+            {...foundDog}
           />
         )
       }} />

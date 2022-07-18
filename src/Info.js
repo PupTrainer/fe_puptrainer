@@ -1,14 +1,17 @@
 import React from 'react'
 import './Info.css'
+import { Link } from 'react-router-dom'
 
 const Info = ({ user }) => {
     if (user.dogs) {
         const dogList = user.dogs.map((dog) => {
-            return <div key={dog.id} className='dog-btn'>
+            return <Link to={`/${dog.id}`} key={dog.id}>
+                <div className='dog-btn'>
                     <button>{dog.name}</button>
                 </div> 
+                    </Link>
         })
-    
+        
         return (
             <div className='user-info-container'>
                 <div className='user-info'>
@@ -27,4 +30,4 @@ const Info = ({ user }) => {
     }
 }
 
-export default Info
+export default Info;

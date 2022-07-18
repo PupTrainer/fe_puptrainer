@@ -13,7 +13,7 @@ const Login = ({loginUser}) => {
     }
 
     return (
-        <div>
+      <div>
             <h1 className='title'>Welcome to PupTrainer</h1>
         <div className='login-page'>
             <div className='input-container'>
@@ -40,7 +40,7 @@ const Login = ({loginUser}) => {
                 </Link>
             </div>
         </div>
-        </div>
+      </div>
     )
 }
 export default Login

@@ -42,7 +42,7 @@ const About = () => {
                 </div>
                 <div className='dev'>
                     <h3>Josh M</h3>
-                    <p>Meet their pup Pheonix</p>
+                    <p>Meet their pup Phoenix</p>
                     <img src={JoshM} alt='Photo of Joshs dog'/>
                 </div>
                 <div className='dev'>

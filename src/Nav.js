@@ -3,10 +3,12 @@ import { NavLink } from 'react-router-dom';
 import "./Nav.css";
 import logoImage from "./images/PupTrainerLogo.png"
 
-const Nav = ({ setUser }) => {
+const Nav = ({ setUser, setUsername, setEmail }) => {
 
     const clearLogin = () => {
         setUser('')
+        setUsername('')
+        setEmail('')
     }
 
     return (

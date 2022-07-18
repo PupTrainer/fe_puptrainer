@@ -2,22 +2,17 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './login.css'
 
-const Login = ({loginUser}) => {
+const CreateUser = ({ createNewUser }) => {
 
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
-
-    const clearInputs = () => {
-      setUsername('');
-      setEmail('');
-    }
 
     return (
       <div>
             <h1 className='title'>Welcome to PupTrainer</h1>
         <div className='login-page'>
             <div className='input-container'>
-                <p>Please login</p>
+                <p>Please enter a <b>username</b> and <b>email</b></p>
                 <input
                 className='input'
                 type='text'
@@ -32,18 +27,15 @@ const Login = ({loginUser}) => {
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
                 />
-                <Link to="/homepage">
+                <Link to='/confirm'>
                   <button onClick={() => {
-                    loginUser(username, email);
-                    clearInputs();
-                  }}className='button'>Login</button>
+                    createNewUser(username, email);
+                  }}className='button'>Register</button>
                 </Link>
-                
-                  <p><Link to="create-user">Register here</Link></p>
-                
+                  <p>If already a user, click <Link to='/'>Here</Link> to login</p>
             </div>
         </div>
       </div>
     )
 }
-export default Login
+export default CreateUser

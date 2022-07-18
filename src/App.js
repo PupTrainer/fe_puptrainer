@@ -130,7 +130,7 @@ const App = () => {
     })
     .then(() => fetchUser({
       variables: {
-        id: user.id
+        email: email
       }
     }))
     .then((data) => {

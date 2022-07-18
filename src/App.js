@@ -3,6 +3,8 @@ import Nav from './Nav'
 import Homepage from './Homepage'
 import Login from './Login'
 import About from './About'
+import CreateUser from './CreateUser'
+import ConfirmPage from './ConfirmPage'
 
 import { Route, Switch } from 'react-router-dom';
 import { gql, useMutation, useLazyQuery } from '@apollo/client';
@@ -11,16 +13,14 @@ import DogProfile from './DogProfile'
 const App = () => {
 
   const [user, setUser] = useState({})
-
-  //verify we use lines 16+17 at production stage
   const [username, setUsername] = useState('') 
   const [email, setEmail] = useState('')
 
   const FETCH_USER = gql`
     query fetchUser(
-      $id: ID!
+      $email: String!
     ){
-      fetchUser(id: $id){
+      fetchUser(email: $email){
         id
         username
         email
@@ -89,23 +89,33 @@ const App = () => {
     setUsername(username)
     setEmail(email)
 
+    fetchUser({
+      variables: {
+        email: email
+      }
+    })
+    .then((data) => {
+      console.log(data)
+      setUser(data.data.fetchUser)
+  })
+    if (errorUser) {
+      console.warn(errorUser)
+    }
+  }
+
+  const createNewUser = (username, email) => {
+    setUsername(username)
+    setEmail(email)
+
     createUser({
       variables: {
         username: username,
         email: email
       }
-    })
-    .then(data => {
-      return fetchUser({
-      variables: {
-        id: data.data.createUser.user.id
-      }
-    })})
-    .then((data) => {
-      setUser(data.data.fetchUser)
-  })
+    }).then(data => console.log(data))
+    
     if (errorUser) {
-      console.log(errorUser)
+      console.warn(errorUser)
     }
   }
 
@@ -120,14 +130,14 @@ const App = () => {
     })
     .then(() => fetchUser({
       variables: {
-        id: user.id
+        email: email
       }
     }))
     .then((data) => {
       setUser(data.data.fetchUser)
     })
     if (errorDog) {
-      console.log(errorDog)
+      console.warn(errorDog)
     }
   }
 
@@ -135,15 +145,21 @@ const App = () => {
     <div>
       <Switch>
         <Route exact path='/'>
-          <Login loginUser={loginUser}/>
+          <Login loginUser={ loginUser }/>
         </Route>
         <Route path='/homepage'>
-          < Nav />
-          < Homepage user={user} registerDog={registerDog}/>
+          < Nav setUser={ setUser } setUsername={ setUsername } setEmail={ setEmail }/>
+          < Homepage user={user} registerDog={ registerDog }/>
         </Route>
         <Route path='/about'>
-          < Nav />
+          < Nav setUser={ setUser } setUsername={ setUsername } setEmail={ setEmail }/>
           <About />
+        </Route>
+        <Route exact path='/create-user'>
+          <CreateUser createNewUser={ createNewUser }/>
+        </Route>
+        <Route exact path='/confirm'>
+          <ConfirmPage />
         </Route>
         <Route 
             exact
@@ -154,7 +170,7 @@ const App = () => {
               })
           return (
             <>
-              < Nav />
+              < Nav setUser={ setUser } setUsername={ setUsername } setEmail={ setEmail }/>
               <DogProfile
                 {...foundDog}
               />
@@ -169,4 +185,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;

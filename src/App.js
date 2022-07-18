@@ -13,16 +13,14 @@ import DogProfile from './DogProfile'
 const App = () => {
 
   const [user, setUser] = useState({})
-
-  //verify we use lines 16+17 at production stage
   const [username, setUsername] = useState('') 
   const [email, setEmail] = useState('')
 
   const FETCH_USER = gql`
     query fetchUser(
-      $id: ID!
+      $email: String!
     ){
-      fetchUser(id: $id){
+      fetchUser(email: $email){
         id
         username
         email
@@ -91,23 +89,17 @@ const App = () => {
     setUsername(username)
     setEmail(email)
 
-    createUser({
+    fetchUser({
       variables: {
-        username: username,
         email: email
       }
     })
-    .then(data => {
-      return fetchUser({
-      variables: {
-        id: data.data.createUser.user.id
-      }
-    })})
     .then((data) => {
+      console.log(data)
       setUser(data.data.fetchUser)
   })
     if (errorUser) {
-      console.log(errorUser)
+      console.warn(errorUser)
     }
   }
 
@@ -123,7 +115,7 @@ const App = () => {
     }).then(data => console.log(data))
     
     if (errorUser) {
-      console.log(errorUser)
+      console.warn(errorUser)
     }
   }
 
@@ -145,7 +137,7 @@ const App = () => {
       setUser(data.data.fetchUser)
     })
     if (errorDog) {
-      console.log(errorDog)
+      console.warn(errorDog)
     }
   }
 
@@ -193,4 +185,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;

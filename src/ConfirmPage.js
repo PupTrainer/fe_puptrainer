@@ -18,4 +18,4 @@ const ConfirmPage = ({createNewUser}) => {
       </div>
     )
 }
-export default ConfirmPage
+export default ConfirmPage;

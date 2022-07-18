@@ -38,4 +38,4 @@ const CreateUser = ({ createNewUser }) => {
       </div>
     )
 }
-export default CreateUser
+export default CreateUser;

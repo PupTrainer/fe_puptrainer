@@ -138,11 +138,11 @@ const App = () => {
           <Login loginUser={loginUser}/>
         </Route>
         <Route path='/homepage'>
-          < Nav />
+          < Nav setUser={setUser}/>
           < Homepage user={user} registerDog={registerDog}/>
         </Route>
         <Route path='/about'>
-          < Nav />
+          < Nav setUser={setUser}/>
           <About />
         </Route>
         <Route 
@@ -154,7 +154,7 @@ const App = () => {
               })
           return (
             <>
-              < Nav />
+              < Nav setUser={setUser}/>
               <DogProfile
                 {...foundDog}
               />

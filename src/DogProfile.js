@@ -24,7 +24,6 @@ const DogProfile = ({ id, name, age, breed, dogSkills}) => {
             <div className='dog-profile-container'>
                 <div className='dog-info-container'>
                     <div className='dog-info'>
-                        <img src='https://i.pinimg.com/originals/5e/9f/6c/5e9f6cf7fc503efe4ab6d4c1984cf326.jpg' alt='smiling dog'/>
                         <div className='dog-details'>
                             <p>{ id }</p>
                             <p>Name: { name }</p>

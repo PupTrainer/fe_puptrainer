@@ -2,28 +2,38 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid blue;
   margin: 2rem;
   width: 30%;
+  border: solid 1.5rem #02c39a;
+  height: 75vh;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .user-info > h2 {
-  border: 2px solid red;
   font-size: 2.5rem;
 }
 
-.user-info-container > p {
-  border: 2px solid blue;
+span {
+  font-weight: bolder;
 }
 
-.user-info-container > button {
+.dog-btn > button {
   margin: 1rem;
+  border-radius: 10px;
+  height: 50px;
+  width: 75px;
 }
 
 .pets {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 hr {

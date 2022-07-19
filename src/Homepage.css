@@ -1,5 +1,9 @@
+* {
+  background-color: #EFEEF1;
+  overflow: hidden;
+}
+
 .homepage-container {
-  border: 2px solid green;
   display: flex;
   margin-left: 3%;
   margin-right: 3%;

@@ -1,3 +1,7 @@
+$btnColor: grey;
+$btnText: white;
+$btnActiveColor: black;
+
 .nav-container {
   border-bottom: 0.12rem solid black;
   display: flex;
@@ -17,19 +21,19 @@
   justify-content: center;
 }
 
+
 .nav-button {
   text-decoration: none;
-  color: white;
-  background-color: grey;
+  color: $btnText;
+  background-color: $btnColor;
   border-radius: 0.6rem;
   padding: 0.3rem;
   margin: 0rem 6rem;
-}
-
+} 
 .nav-button::hover {
-  background-color: black;
+  background-color: $btnActiveColor
 }
-
 .nav-button::active {
   text-decoration: underline;
-}/*# sourceMappingURL=Nav.css.map */
+}
+

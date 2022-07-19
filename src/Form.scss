@@ -1,11 +1,20 @@
-.form-container {
-    border: 2px solid red;
-    margin: 2rem;
-    width: 60%;
+@mixin flexBox {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: normal;
+    align-items: center;
+    border: 2px solid red;
+    margin: 2rem;
+    height: 75vh;
+    width: 60%;
+    border: solid 1.5rem #02c39a;
 }
 
 .form-container > h2 {
@@ -17,4 +26,16 @@
     margin: 0.3rem;
     height: 2rem;
     width: 19rem;
+}
+
+.input-fields {
+    @include flexBox();
+}
+
+input {
+    margin-bottom: 1rem;
+}
+form {
+    @include flexBox();
+    height: 75vh;
 }

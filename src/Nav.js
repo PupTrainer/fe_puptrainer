@@ -13,7 +13,7 @@ const Nav = ({ setUser, setUsername, setEmail }) => {
 
     return (
         <div className="nav-container">
-          <img src={logoImage} alt="puptrainer Logo" />
+          <img className='logo' src={logoImage} alt="puptrainer Logo" />
           <div className='links'>
               <NavLink className= "nav-button" to='/homepage'>User Profile</NavLink>
               <NavLink className= "nav-button" to='/About'>About</NavLink>

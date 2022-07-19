@@ -16,27 +16,29 @@ const Form = ({ user, registerDog }) => {
     <div className='form-container'>
       <form onSubmit={(event) => submitDog(event)}>
         <h2>Register Pets</h2>
-        <input
-          type='text'
-          placeholder='Name'
-          value={name}
-          onChange={(event) => setName(event.target.value)}
-        >
-        </input>
-        <input
-          type='text'
-          placeholder='Age'
-          value={age}
-          onChange={(event) => setAge(event.target.value)}
-        >
-        </input>
-        <input
-          type='text'
-          placeholder='Breed'
-          value={breed}
-          onChange={(event) => setBreed(event.target.value)}
-        >
-        </input><br></br>
+        <div className='input-fields'>
+          <input
+            type='text'
+            placeholder='Name'
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+          >
+          </input>
+          <input
+            type='text'
+            placeholder='Age'
+            value={age}
+            onChange={(event) => setAge(event.target.value)}
+          >
+          </input>
+          <input
+            type='text'
+            placeholder='Breed'
+            value={breed}
+            onChange={(event) => setBreed(event.target.value)}
+          >
+          </input><br></br>
+        </div>
         <input type="checkbox" name="know-skills" value="Skill 1"/>
         <label>Skill 1</label><br></br>
         <input type="checkbox" name="know-skills" value="Skill 2"/>

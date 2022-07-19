@@ -5,6 +5,7 @@ import Login from './Login'
 import About from './About'
 import CreateUser from './CreateUser'
 import ConfirmPage from './ConfirmPage'
+import Skill from './Skill'
 
 import { Route, Switch } from 'react-router-dom';
 import { gql, useMutation, useLazyQuery, useQuery } from '@apollo/client';
@@ -212,6 +213,12 @@ const App = () => {
             console.log('match.params.id', match.params.id)
             return skill.id === match.params.id
           })
+          return (
+            <>
+              <Nav setUser={ setUser } setUsername={ setUsername } setEmail={ setEmail } />
+              <Skill {...foundSkill} />
+            </>
+          )
         }} 
         />
         <Route render={() => {

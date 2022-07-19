@@ -1,9 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './DogProfile.css'
+import { gql, useQuery } from '@apollo/client';
+import { Link } from 'react-router-dom';
 
-const DogProfile = ({ id, name, age, breed }) => {
+const DogProfile = ({ id, name, age, breed, dogSkills}) => {
     
-    const [ skills, setSkills ] = useState([])
+    
+    const allSkills = dogSkills.map(skill => {
+        return(
+            <div id={skill.id} key={skill.id}>
+            <Link to={`/skill/${skill.id}`}>
+                <div>
+                    <p>{skill.name}</p>
+                </div>
+            </Link>
+            </div>
+        )
+    })
+    
 
     return(
         <div>
@@ -12,49 +26,22 @@ const DogProfile = ({ id, name, age, breed }) => {
                     <div className='dog-info'>
                         <img src='https://i.pinimg.com/originals/5e/9f/6c/5e9f6cf7fc503efe4ab6d4c1984cf326.jpg' alt='smiling dog'/>
                         <div className='dog-details'>
-                            <h1>{ id }</h1>
-                            <h1>Name: { name }</h1>
-                            <h1>Age: { age }</h1>
-                            <h1>Breed: { breed }</h1>
+                            <p>{ id }</p>
+                            <p>Name: { name }</p>
+                            <p>Age: { age }</p>
+                            <p>Breed: { breed }</p>
                         </div>
                     </div>
                     <div className='dog-known-skills-container'>
                         <h1 className='known-skills-title'>Known Skills:</h1>
                         <div className='dog-known-skills'>
-                            <h1>Skill</h1>
-                            <h1>Skill</h1>
-                            <h1>Skill</h1>
-                            <h1>Skill</h1>
-                            <h1>Skill</h1>
-                            <h1>Skill</h1>
                         </div>
                     </div>
                 </div>
                 <div className='dog-training'>
                     <h1 className='training-title'>Training</h1>
                     <div className='skills'>
-                        <h1>Skill</h1>
-                        <h1>Skill</h1>
-                        <h1>Skill</h1>
-                        <h1>Skill</h1>
-                        <h1>Skill</h1>
-                        <h1>Skill</h1>
-                    </div>
-                    <div className='skills'>
-                        <h1>Skill</h1>
-                        <h1>Skill</h1>
-                        <h1>Skill</h1>
-                        <h1>Skill</h1>
-                        <h1>Skill</h1>
-                        <h1>Skill</h1>
-                    </div>
-                    <div className='skills'>
-                        <h1>Skill</h1>
-                        <h1>Skill</h1>
-                        <h1>Skill</h1>
-                        <h1>Skill</h1>
-                        <h1>Skill</h1>
-                        <h1>Skill</h1>
+                        {allSkills}
                     </div>
                 </div>
             </div>

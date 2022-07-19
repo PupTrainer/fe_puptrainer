@@ -7,7 +7,7 @@ import CreateUser from './CreateUser'
 import ConfirmPage from './ConfirmPage'
 
 import { Route, Switch } from 'react-router-dom';
-import { gql, useMutation, useLazyQuery } from '@apollo/client';
+import { gql, useMutation, useLazyQuery, useQuery } from '@apollo/client';
 import DogProfile from './DogProfile'
 
 const App = () => {

@@ -3,38 +3,13 @@ import './DogProfile.css'
 import { gql, useQuery } from '@apollo/client';
 import { Link } from 'react-router-dom';
 
-const DogProfile = ({ id, name, age, breed }) => {
-    
-    const [ skills, setSkills ] = useState([])
-    const FETCH_SKILLS = gql`
-    query {
-      fetchSkills{
-        id
-        name
-        level
-        description
-        criteria
-        youtubeLink
-      }
-    }
-    `
-
-    const { loading, error, data } =  useQuery(FETCH_SKILLS);
-    if(loading) {
-        console.log('loading')
-    }
-    if(error) {
-        console.warn(error)
-    }
-    if(!loading && !error && skills.length === 0) {
-        setSkills(data.fetchSkills)
-    }
+const DogProfile = ({ id, name, age, breed, dogSkills}) => {
     
     
-    const allSkills = skills.map(skill => {
+    const allSkills = dogSkills.map(skill => {
         return(
             <div id={skill.id} key={skill.id}>
-            <Link to={`/skill-${skill.id}`}>
+            <Link to={`/skill/${skill.id}`}>
                 <div>
                     <p>{skill.name}</p>
                 </div>

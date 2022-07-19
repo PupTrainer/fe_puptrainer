@@ -15,6 +15,33 @@ const App = () => {
   const [user, setUser] = useState({})
   const [username, setUsername] = useState('') 
   const [email, setEmail] = useState('')
+  const [dogSkills, setDogSkills] = useState('')
+
+
+  const [ skills, setSkills ] = useState([])
+    const FETCH_SKILLS = gql`
+    query {
+      fetchSkills{
+        id
+        name
+        level
+        description
+        criteria
+        youtubeLink
+      }
+    }
+    `
+
+    const { loading, error, data } =  useQuery(FETCH_SKILLS);
+    if(loading) {
+        console.log('loading')
+    }
+    if(error) {
+        console.warn(error)
+    }
+    if(!loading && !error && dogSkills.length === 0) {
+        setDogSkills(data.fetchSkills)
+    }
 
   const FETCH_USER = gql`
     query fetchUser(
@@ -173,10 +200,20 @@ const App = () => {
               < Nav setUser={ setUser } setUsername={ setUsername } setEmail={ setEmail }/>
               <DogProfile
                 {...foundDog}
+                dogSkills={dogSkills}
               />
             </>
           )
         }} />
+        <Route
+        path='/skill/:id'
+        render={({match}) => {
+          const foundSkill = dogSkills.find(skill => {
+            console.log('match.params.id', match.params.id)
+            return skill.id === match.params.id
+          })
+        }} 
+        />
         <Route render={() => {
           return <h1>Nothing here. Go back Home.</h1>
         }} />

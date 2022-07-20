@@ -190,7 +190,7 @@ describe('Homepage Sad Path', () => {
     cy.get('.button').click()
   })
 
-  it.only('should not be able to login with invalid user information', () => {
+  it.only('should not be able to create a pet without all of the pet info', () => {
     cy.intercept('POST', 'https://pup-trainer-api.herokuapp.com/graphql', (req) => {
       const { body } = req
       aliasMutation(req, 'createDog')
@@ -220,7 +220,6 @@ describe('Homepage Sad Path', () => {
       }
     }
     ]
-
           console.log('Working')
         })
       } else {
@@ -228,11 +227,12 @@ describe('Homepage Sad Path', () => {
       }
     })
     cy.get('[placeholder="Name"]').type('Dirk Tha Man 2')
-    // cy.get('[placeholder="Age"]').type(2)
     cy.get('[placeholder="Breed"]').type('mix')
     cy.get('[type="submit"]').click()
 
-    cy.get('h2').contains('Invalid user...')
+    cy.get('[placeholder="Age"]').should('have.text','')
+
+    cy.get('.pets').contains('Dirk Tha Man 2').should('not.exist')
 
   })
 

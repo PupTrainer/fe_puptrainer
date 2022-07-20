@@ -96,7 +96,7 @@ describe('Login Sad Path', () => {
     cy.visit('http://localhost:3000/')
   })
 
-  it.only('should not be able to login with invalid user information', () => {
+  it('should not be able to login with invalid user information', () => {
     cy.intercept('POST', 'https://pup-trainer-api.herokuapp.com/graphql', (req) => {
       const { body } = req
       aliasQuery(req, 'fetchUser')

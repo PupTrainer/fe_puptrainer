@@ -5,8 +5,8 @@ import './Homepage.css'
 import { Link } from 'react-router-dom'
 
 
-const Homepage = ({ user, registerDog, setDogId, dataUser}) => {
-    if(dataUser) {
+const Homepage = ({ user, registerDog, setDogId}) => {
+    if(user.id) {
         return (
             <div className='homepage-container'>
                 <Info user={user} setDogId={setDogId}/>

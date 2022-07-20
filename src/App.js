@@ -6,6 +6,7 @@ import About from './About'
 import CreateUser from './CreateUser'
 import ConfirmPage from './ConfirmPage'
 import Skill from './Skill'
+import './App.css'
 
 import { Route, Switch } from 'react-router-dom';
 import { gql, useMutation, useLazyQuery, useQuery } from '@apollo/client';

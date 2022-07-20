@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './DogProfile.css'
 import { gql, useQuery } from '@apollo/client';
 import { Link } from 'react-router-dom';
+import dogimg from './images/dog.png'
 
 const DogProfile = ({ id, name, age, breed, dogSkills, skills}) => {
 
@@ -21,8 +22,8 @@ const DogProfile = ({ id, name, age, breed, dogSkills, skills}) => {
             return(
                 <div id={skill.id} key={skill.id}>
                 <Link to={`/skill/${skill.id}`}>
-                    <div>
-                        <p>{skill.name}</p>
+                    <div className='training-skill-container'>
+                        <p className='training-skill'>{skill.name}</p>
                     </div>
                 </Link>
                 </div>
@@ -36,6 +37,7 @@ const DogProfile = ({ id, name, age, breed, dogSkills, skills}) => {
             <div className='dog-profile-container'>
                 <div className='dog-info-container'>
                     <div className='dog-info'>
+                        <img className='dog-img' src={dogimg} alt='Dog silhouette'/>
                         <div className='dog-details'>
                             <p>Name: { name }</p>
                             <p>Age: { age }</p>

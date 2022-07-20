@@ -14,11 +14,11 @@
     margin: 2rem;
     height: 75vh;
     width: 60%;
-    border: solid 1.5rem #02c39a;
+    border: solid 2px black;
+    border-radius: .8rem;
 }
 
-.form-container > h2 {
-    border: 2px solid blue;
+.form-title {
     font-size: 3rem;
 }
 

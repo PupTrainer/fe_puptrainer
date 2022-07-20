@@ -1,7 +1,7 @@
 import { aliasQuery, aliasMutation, hasOperationName } from '../utils/graphql-test-utils'
 
 
-describe('empty spec', () => {
+describe('Login', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/')
   })

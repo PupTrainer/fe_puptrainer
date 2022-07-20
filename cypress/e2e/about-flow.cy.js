@@ -1,4 +1,4 @@
-describe('empty spec', () => {
+describe('About', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/About')
   })

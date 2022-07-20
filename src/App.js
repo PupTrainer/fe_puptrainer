@@ -212,6 +212,7 @@ const App = () => {
     ).then((data) => {
       console.log(data, 'DATA')
       setUser(data.data.fetchUser)
+      setDogId(0)
     })
     if(errorDogSkill) {
       console.warn(errorDogSkill)
@@ -265,7 +266,7 @@ const App = () => {
           return (
             <>
               <Nav setUser={ setUser } setUsername={ setUsername } setEmail={ setEmail } />
-              <Skill {...foundSkill} registerDogSkill={registerDogSkill} />
+              <Skill {...foundSkill} registerDogSkill={registerDogSkill} dogId={dogId}/>
             </>
           )
         }} 

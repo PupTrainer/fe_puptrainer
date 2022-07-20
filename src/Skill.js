@@ -1,7 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Skill.css'
 
-const Skill = ({ name, id, description, level, criteria, youtubeLink, registerDogSkill}) => {
+const Skill = ({ name, id, description, level, criteria, youtubeLink, registerDogSkill, dogId}) => {
   return (
     <div className='skill-container'>
         <div className='description'>
@@ -16,7 +17,7 @@ const Skill = ({ name, id, description, level, criteria, youtubeLink, registerDo
         </div>
           <div>
             <iframe className='video' width="560" height="315" src={`https://www.youtube.com/embed/${youtubeLink}`} title="YouTube video player" frameBorder="0"></iframe>
-            <button className='training-btn' onClick={() => registerDogSkill(id)}>Complete Training</button>
+            <Link to={`/${dogId}`}><button className='training-btn' onClick={() => registerDogSkill(id)}>Complete Training</button></Link>
           </div>
     </div>
   )

@@ -27,11 +27,15 @@ const CreateUser = ({ createNewUser }) => {
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
                 />
-                <Link to='/confirm'>
+                {username && email ? <Link to='/confirm'>
                   <button onClick={() => {
                     createNewUser(username, email);
                   }}className='button'>Register</button>
-                </Link>
+                </Link> : <Link to='/create-user'>
+                  <button onClick={() => {
+                    createNewUser(username, email);
+                  }}className='button'>Register</button>
+                </Link> }
                   <p>If already a user, click <Link to='/'>Here</Link> to login</p>
             </div>
         </div>

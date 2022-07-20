@@ -6,6 +6,8 @@ import About from './About'
 import CreateUser from './CreateUser'
 import ConfirmPage from './ConfirmPage'
 import Skill from './Skill'
+import NoPageFound from './NoPageFound'
+
 
 import { Route, Switch } from 'react-router-dom';
 import { gql, useMutation, useLazyQuery, useQuery } from '@apollo/client';
@@ -232,7 +234,7 @@ const App = () => {
         </Route>
         <Route path='/homepage'>
           < Nav setUser={ setUser } setUsername={ setUsername } setEmail={ setEmail }/>
-          < Homepage user={user} registerDog={ registerDog } setDogId={setDogId}/>
+          < Homepage user={user} registerDog={ registerDog } setDogId={setDogId} dataUser={dataUser}/>
         </Route>
         <Route path='/about'>
           < Nav setUser={ setUser } setUsername={ setUsername } setEmail={ setEmail }/>
@@ -244,6 +246,9 @@ const App = () => {
         <Route exact path='/confirm'>
           <ConfirmPage />
         </Route>
+        <Route path='*' render={() => {
+          return <NoPageFound user={user}/>
+        }}/>
         <Route 
             exact
             path='/:id'
@@ -276,9 +281,6 @@ const App = () => {
           )
         }} 
         />
-        <Route render={() => {
-          return <h1>Nothing here. Go back Home.</h1>
-        }} />
       </Switch>
     </div>
   )

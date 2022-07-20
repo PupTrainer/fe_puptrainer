@@ -22,13 +22,15 @@ const Form = ({ user, registerDog }) => {
             placeholder='Name'
             value={name}
             onChange={(event) => setName(event.target.value)}
+            required
           >
           </input>
           <input
-            type='text'
+            type='number'
             placeholder='Age'
             value={age}
             onChange={(event) => setAge(event.target.value)}
+            required
           >
           </input>
           <input
@@ -36,19 +38,10 @@ const Form = ({ user, registerDog }) => {
             placeholder='Breed'
             value={breed}
             onChange={(event) => setBreed(event.target.value)}
+            required
           >
           </input><br></br>
         </div>
-        <input type="checkbox" name="know-skills" value="Skill 1"/>
-        <label>Skill 1</label><br></br>
-        <input type="checkbox" name="know-skills" value="Skill 2"/>
-        <label>Skill 2</label><br></br>
-        <input type="checkbox" name="know-skills" value="Skill 3"/>
-        <label>Skill 3</label><br></br>
-        <input type="checkbox" name="know-skills" value="Skill 4"/>
-        <label>Skill 4</label><br></br>
-        <input type="checkbox" name="know-skills" value="Skill 5"/>
-        <label>Skill 5</label><br></br>
         <input type="submit" placeholder="Register Pet" />
       </form>
     </div>

@@ -57,6 +57,10 @@ const App = () => {
           name
           age
           breed
+          skills {
+            id
+            name
+          }
         }
       }
     }

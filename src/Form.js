@@ -18,7 +18,7 @@ const Form = ({ user, registerDog }) => {
   return (
     <div className='form-container'>
       <form onSubmit={(event) => submitDog(event)}>
-        <h2>Register Pets</h2>
+        <h2 className='form-title'>Register Pets</h2>
         <div className='input-fields'>
           <input
             type='text'

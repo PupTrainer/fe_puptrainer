@@ -6,11 +6,13 @@ const Skill = ({ name, id, description, level, criteria, youtubeLink, registerDo
   return (
     <div className='skill-container'>
         <div className='description'>
-            <h2 className='skill-title'>Skill Description</h2>
-            <p className='skill-name'>{name}</p>
-            <p>Level: {level}</p>
-            <p>{description}</p>
-            <div>
+            <div className='skill-info'>
+              <h2 className='skill-title'>Skill Description</h2>
+              <p className='skill-name'>{name}</p>
+              <p>Level: {level}</p>
+              <p>{description}</p>
+            </div>
+            <div className='pass'>
               <p className='requirement'>Pass Requirements:</p>
               <p>{criteria}</p>
             </div>

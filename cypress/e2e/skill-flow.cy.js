@@ -71,11 +71,11 @@ describe('Skill Page', () => {
   })
 
   it('should have the skill level', () => {
-    cy.get('.description > :nth-child(3)').should('have.text', 'Level: 1')
+    cy.get('.skill-info > :nth-child(3)').should('have.text', 'Level: 1')
   })
 
   it('should have the skill description', () => {
-    cy.get('.description > :nth-child(4)').should('have.text', "Step 1. Get your dog's attention with a treat. Step 2. While lowering your hand to the floor and moving it in front of your dog's eyes, say 'Down'. Step 3. Your dog should lay down on its belly with its front legs out stretched and look at you.  Step 4. Reward your dog with the treat.")
+    cy.get('.skill-info > :nth-child(4)').should('have.text', "Step 1. Get your dog's attention with a treat. Step 2. While lowering your hand to the floor and moving it in front of your dog's eyes, say 'Down'. Step 3. Your dog should lay down on its belly with its front legs out stretched and look at you.  Step 4. Reward your dog with the treat.")
   })
 
   it('should have a Pass Requirement title', () => {
@@ -83,7 +83,7 @@ describe('Skill Page', () => {
   })
 
   it('should have a requirements description', () => {
-    cy.get('.description > div > :nth-child(2)').should('have.text', 'Your dog should lay down after you say the command and say there until you release them.')
+    cy.get('.pass > :nth-child(2)').should('have.text', 'Your dog should lay down after you say the command and say there until you release them.')
   })
 
   it('should have a video', () => {

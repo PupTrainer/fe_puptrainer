@@ -13,6 +13,15 @@ describe('Homepage', () => {
           res.body.data.data.createUser.user.email = 'dan@gmail.com'
           res.body.data.data.createUser.user.id = 1
           res.body.data.data.createUser.user.username = 'dan'
+          res.body.data.fetchUser.dogs = [
+            {
+                id: '2',
+                name: 'Dany',
+                age: 4,
+                breed: 'Mix',
+                skills: []
+              }
+          ]
           console.log('Working')
         })
       } else {
@@ -34,7 +43,8 @@ describe('Homepage', () => {
                 id: '2',
                 name: 'Dany',
                 age: 4,
-                breed: 'Mix'
+                breed: 'Mix',
+                skills: []
               }
           ]
           console.log('Working')
@@ -57,7 +67,8 @@ describe('Homepage', () => {
           res.body.data.createDog.user = {
             id: '1',
             username: 'dan',
-            email: 'dan@gmail.com'
+            email: 'dan@gmail.com',
+            dogs: []
           }
 
           console.log('Working')
@@ -92,7 +103,8 @@ describe('Homepage', () => {
                     id: '1',
                     name: 'Dirk Tha Man 2',
                     age: 2,
-                    breed: 'Mix'
+                    breed: 'Mix',
+                    skills: []
                   }]
                   console.log('Working')
                 })
@@ -107,12 +119,11 @@ describe('Homepage', () => {
         cy.get('[type="submit"]').click()
         cy.get('.dog-btn > :nth-child(1)').should('have.text', 'Dirk Tha Man 2')
     })
-    
-    it('Should be able to navigate to the dog profile page', () => {
-        cy.get('button').click()
-        cy.url('http://localhost:3000/1')
-    })
 
+    it('Should navigate to the dog profile', () => {
+      cy.get('button').click()
+      cy.url('http://localhost:3000/2')
+    })
     it('Should be able to navigate to the about page', () => {
         cy.get('[href="/About"]').click()
         cy.url('http://localhost:3000/about')

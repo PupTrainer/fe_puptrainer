@@ -167,7 +167,11 @@ const App = () => {
         username: username,
         email: email
       }
-    }).then(data => console.log(data))
+    }).then(data => {
+      console.log(data)
+      setUsername('')
+      setEmail('')
+    })
     
     if (errorUser) {
       console.warn(errorUser)

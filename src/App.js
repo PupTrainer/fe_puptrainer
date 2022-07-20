@@ -22,7 +22,7 @@ const App = () => {
 
   const [ skills, setSkills ] = useState([])
     const FETCH_SKILLS = gql`
-    query {
+    query fetchSkills {
       fetchSkills{
         id
         name
@@ -42,7 +42,8 @@ const App = () => {
         console.warn(error)
     }
     if(!loading && !error && dogSkills.length === 0) {
-        setDogSkills(data.fetchSkills)
+      console.log('fetch skill', data)  
+      setDogSkills(data.fetchSkills)
     }
 
   const FETCH_USER = gql`

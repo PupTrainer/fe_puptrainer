@@ -217,9 +217,7 @@ const App = () => {
         }
       })
     ).then((data) => {
-      console.log(data, 'DATA')
       setUser(data.data.fetchUser)
-      setDogId(0)
     })
     if(errorDogSkill) {
       console.warn(errorDogSkill)
@@ -246,9 +244,6 @@ const App = () => {
         <Route exact path='/confirm'>
           <ConfirmPage />
         </Route>
-        <Route path='*' render={() => {
-          return <NoPageFound user={user}/>
-        }}/>
         <Route 
             exact
             path='/:id'
@@ -256,8 +251,8 @@ const App = () => {
               const foundDog = user.dogs.find((dog) => {
                 return dog.id === match.params.id
               })
-          return (
-            <>
+              return (
+                <>
               < Nav setUser={ setUser } setUsername={ setUsername } setEmail={ setEmail }/>
               <DogProfile
                 {...foundDog}
@@ -281,6 +276,9 @@ const App = () => {
           )
         }} 
         />
+        <Route path='*' render={() => {
+          return <NoPageFound user={user}/>
+        }}/>
       </Switch>
     </div>
   )

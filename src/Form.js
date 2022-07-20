@@ -10,6 +10,9 @@ const Form = ({ user, registerDog }) => {
   const submitDog = (event) => {
     event.preventDefault();
     registerDog(name,age,breed,skills);
+    setName('');
+    setAge('');
+    setBreed('');
   }
   
   return (

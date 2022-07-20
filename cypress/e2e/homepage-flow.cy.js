@@ -8,11 +8,20 @@ describe('Homepage', () => {
       const { body } = req
       aliasMutation(req, 'createUser')
       if (hasOperationName(req, 'createUser')) {
-        req.alis = 'gqlcreateUserMutation'
+        req.alias = 'gqlcreateUserMutation'
         req.reply((res) => {
           res.body.data.data.createUser.user.email = 'dan@gmail.com'
           res.body.data.data.createUser.user.id = 1
           res.body.data.data.createUser.user.username = 'dan'
+          res.body.data.fetchUser.dogs = [
+            {
+                id: '2',
+                name: 'Dany',
+                age: 4,
+                breed: 'Mix',
+                skills: []
+              }
+          ]
           console.log('Working')
         })
       } else {
@@ -24,7 +33,7 @@ describe('Homepage', () => {
       const { body } = req
       aliasQuery(req, 'fetchUser')
       if (hasOperationName(req, 'fetchUser')) {
-        req.alis = 'gqlfetchUserQuery'
+        req.alias = 'gqlfetchUserQuery'
         req.reply((res) => {
           res.body.data.fetchUser.email = 'dan@gmail.com'
           res.body.data.fetchUser.id = 1
@@ -34,7 +43,8 @@ describe('Homepage', () => {
                 id: '2',
                 name: 'Dany',
                 age: 4,
-                breed: 'Mix'
+                breed: 'Mix',
+                skills: []
               }
           ]
           console.log('Working')
@@ -48,7 +58,7 @@ describe('Homepage', () => {
       const { body } = req
       aliasMutation(req, 'createDog')
       if (hasOperationName(req, 'createDog')) {
-        req.alis = 'gqlcreateDogMutation'
+        req.alias = 'gqlcreateDogMutation'
         req.reply((res) => {
           res.body.data.createDog.name = 'Dani'
           res.body.data.createDog.id = '1'
@@ -57,7 +67,8 @@ describe('Homepage', () => {
           res.body.data.createDog.user = {
             id: '1',
             username: 'dan',
-            email: 'dan@gmail.com'
+            email: 'dan@gmail.com',
+            dogs: []
           }
 
           console.log('Working')
@@ -83,16 +94,17 @@ describe('Homepage', () => {
           const { body } = req
           aliasQuery(req, 'fetchUser')
           if (hasOperationName(req, 'fetchUser')) {
-              req.alis = 'gqlfetchUserQuery'
+              req.alias = 'gqlfetchUserQuery'
               req.reply((res) => {
                   res.body.data.fetchUser.email = 'dan@gmail.com'
                   res.body.data.fetchUser.id = 1
                   res.body.data.fetchUser.username = 'dan'
                   res.body.data.fetchUser.dogs = [{
                     id: '1',
-                    name: 'Dani',
+                    name: 'Dirk Tha Man 2',
                     age: 2,
-                    breed: 'Mix'
+                    breed: 'Mix',
+                    skills: []
                   }]
                   console.log('Working')
                 })
@@ -101,18 +113,17 @@ describe('Homepage', () => {
             }
         })
 
-        cy.get('[placeholder="Name"]').type('Dani')
+        cy.get('[placeholder="Name"]').type('Dirk Tha Man 2')
         cy.get('[placeholder="Age"]').type(2)
         cy.get('[placeholder="Breed"]').type('mix')
         cy.get('[type="submit"]').click()
-        cy.get('.dog-btn > :nth-child(1)').should('have.text', 'Dani')
-    })
-    
-    it('Should be able to navigate to the dog profile page', () => {
-        cy.get('button').click()
-        cy.url('http://localhost:3000/1')
+        cy.get('.dog-btn > :nth-child(1)').should('have.text', 'Dirk Tha Man 2')
     })
 
+    it('Should navigate to the dog profile', () => {
+      cy.get('button').click()
+      cy.url('http://localhost:3000/2')
+    })
     it('Should be able to navigate to the about page', () => {
         cy.get('[href="/About"]').click()
         cy.url('http://localhost:3000/about')

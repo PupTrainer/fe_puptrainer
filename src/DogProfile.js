@@ -3,19 +3,31 @@ import './DogProfile.css'
 import { gql, useQuery } from '@apollo/client';
 import { Link } from 'react-router-dom';
 
-const DogProfile = ({ id, name, age, breed, dogSkills}) => {
-    
+const DogProfile = ({ id, name, age, breed, dogSkills, skills}) => {
+
+
+    let knownSkillIds = []
+    const knownSkills = skills.map(skill => {
+        knownSkillIds.push(skill.id)
+            return (
+                <div>
+                    <p id={skill.id}>{skill.name}</p>
+                </div>
+            )
+    })
     
     const allSkills = dogSkills.map(skill => {
-        return(
-            <div id={skill.id} key={skill.id}>
-            <Link to={`/skill/${skill.id}`}>
-                <div>
-                    <p>{skill.name}</p>
+        if(!knownSkillIds.includes(skill.id)) {
+            return(
+                <div id={skill.id} key={skill.id}>
+                <Link to={`/skill/${skill.id}`}>
+                    <div>
+                        <p>{skill.name}</p>
+                    </div>
+                </Link>
                 </div>
-            </Link>
-            </div>
-        )
+            )
+        }
     })
     
 
@@ -25,7 +37,6 @@ const DogProfile = ({ id, name, age, breed, dogSkills}) => {
                 <div className='dog-info-container'>
                     <div className='dog-info'>
                         <div className='dog-details'>
-                            <p>{ id }</p>
                             <p>Name: { name }</p>
                             <p>Age: { age }</p>
                             <p>Breed: { breed }</p>
@@ -34,6 +45,7 @@ const DogProfile = ({ id, name, age, breed, dogSkills}) => {
                     <div className='dog-known-skills-container'>
                         <h1 className='known-skills-title'>Known Skills:</h1>
                         <div className='dog-known-skills'>
+                            {knownSkills}
                         </div>
                     </div>
                 </div>

@@ -3,10 +3,10 @@ import Info from './Info'
 import Form from './Form'
 import './Homepage.css'
 
-const Homepage = ({ user, registerDog }) => {
+const Homepage = ({ user, registerDog, setDogId}) => {
     return (
         <div className='homepage-container'>
-            <Info user={user}/>
+            <Info user={user} setDogId={setDogId}/>
             <Form user={user} registerDog={registerDog}/>
         </div>
     )

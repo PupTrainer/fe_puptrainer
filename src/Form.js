@@ -10,6 +10,9 @@ const Form = ({ user, registerDog }) => {
   const submitDog = (event) => {
     event.preventDefault();
     registerDog(name,age,breed,skills);
+    setName('');
+    setAge('');
+    setBreed('');
   }
   
   return (
@@ -22,13 +25,15 @@ const Form = ({ user, registerDog }) => {
             placeholder='Name'
             value={name}
             onChange={(event) => setName(event.target.value)}
+            required
           >
           </input>
           <input
-            type='text'
+            type='number'
             placeholder='Age'
             value={age}
             onChange={(event) => setAge(event.target.value)}
+            required
           >
           </input>
           <input
@@ -36,6 +41,7 @@ const Form = ({ user, registerDog }) => {
             placeholder='Breed'
             value={breed}
             onChange={(event) => setBreed(event.target.value)}
+            required
           >
           </input><br></br>
         </div>

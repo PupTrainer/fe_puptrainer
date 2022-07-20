@@ -7,6 +7,8 @@ import CreateUser from './CreateUser'
 import ConfirmPage from './ConfirmPage'
 import Skill from './Skill'
 import './App.css'
+import NoPageFound from './NoPageFound'
+
 
 import { Route, Switch } from 'react-router-dom';
 import { gql, useMutation, useLazyQuery, useQuery } from '@apollo/client';
@@ -23,7 +25,7 @@ const App = () => {
 
   const [ skills, setSkills ] = useState([])
     const FETCH_SKILLS = gql`
-    query {
+    query fetchSkills {
       fetchSkills{
         id
         name
@@ -43,7 +45,8 @@ const App = () => {
         console.warn(error)
     }
     if(!loading && !error && dogSkills.length === 0) {
-        setDogSkills(data.fetchSkills)
+      console.log('fetch skill', data)  
+      setDogSkills(data.fetchSkills)
     }
 
   const FETCH_USER = gql`
@@ -215,9 +218,7 @@ const App = () => {
         }
       })
     ).then((data) => {
-      console.log(data, 'DATA')
       setUser(data.data.fetchUser)
-      setDogId(0)
     })
     if(errorDogSkill) {
       console.warn(errorDogSkill)
@@ -232,7 +233,7 @@ const App = () => {
         </Route>
         <Route path='/homepage'>
           < Nav setUser={ setUser } setUsername={ setUsername } setEmail={ setEmail }/>
-          < Homepage user={user} registerDog={ registerDog } setDogId={setDogId}/>
+          < Homepage user={user} registerDog={ registerDog } setDogId={setDogId} dataUser={dataUser}/>
         </Route>
         <Route path='/about'>
           < Nav setUser={ setUser } setUsername={ setUsername } setEmail={ setEmail }/>
@@ -251,8 +252,8 @@ const App = () => {
               const foundDog = user.dogs.find((dog) => {
                 return dog.id === match.params.id
               })
-          return (
-            <>
+              return (
+                <>
               < Nav setUser={ setUser } setUsername={ setUsername } setEmail={ setEmail }/>
               <DogProfile
                 {...foundDog}
@@ -276,9 +277,9 @@ const App = () => {
           )
         }} 
         />
-        <Route render={() => {
-          return <h1>Nothing here. Go back Home.</h1>
-        }} />
+        <Route path='*' render={() => {
+          return <NoPageFound user={user}/>
+        }}/>
       </Switch>
     </div>
   )

@@ -84,8 +84,8 @@ describe('Homepage', () => {
 
   it('Should show information of logged in user', () => {
     cy.url().should('eq', 'http://localhost:3000/homepage')
-    cy.get('.user-info > :nth-child(4)').should('have.text', 'Username: dan')
-    cy.get('.user-info > :nth-child(5)').should('have.text', 'Email: dan@gmail.com')
+    cy.get('.user-info > :nth-child(3)').should('have.text', 'Username: dan')
+    cy.get('.user-info > :nth-child(4)').should('have.text', 'Email: dan@gmail.com')
   })
 
   it('Should be able to register a dog' , () => {

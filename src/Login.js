@@ -24,6 +24,7 @@ const Login = ({loginUser}) => {
                 placeholder='Username'
                 value={username}
                 onChange={(event) => setUsername(event.target.value)}
+                required
                 />
                 <input
                 className='input'
@@ -31,14 +32,19 @@ const Login = ({loginUser}) => {
                 placeholder='Email'
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
+                required
                 />
-                <Link to="/homepage">
-                  <button onClick={() => {
+                {username && email ? <Link to="/homepage">
+                  <input type="submit" placeholder="Login" className='button' onClick={() => {
                     loginUser(username, email);
                     clearInputs();
-                  }}className='button'>Login</button>
-                </Link>
-                
+                  }}/>
+                </Link>: <Link to="/">
+                  <input type="submit" placeholder="Login" className='button' onClick={() => {
+                    loginUser(username, email);
+                    clearInputs();
+                  }}/>
+                </Link>}
                   <p><Link to="create-user">Register here</Link></p>
                 
             </div>

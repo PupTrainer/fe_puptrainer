@@ -115,7 +115,7 @@ describe('Login Sad Path', () => {
     cy.get('[placeholder="Email"]').type('invalid@gmail.com')
     cy.get('.button').click()
 
-    cy.get('h2').contains('Invalid user...')
+    cy.get('h2').contains('Invalid User')
 
 
   })

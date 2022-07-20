@@ -84,9 +84,9 @@ describe('Login', () => {
     cy.get('.button').click()
 
     cy.url().should('eq', 'http://localhost:3000/homepage')
-
-    cy.get('.user-info > :nth-child(2)').should('have.text', 'Username: dan')
-    cy.get('.user-info > :nth-child(3)').should('have.text', 'Email: dan@gmail.com')
+    cy.wait(1000)
+    cy.get('.user-info > :nth-child(4)').should('have.text', 'Username: dan')
+    cy.get('.user-info > :nth-child(5)').should('have.text', 'Email: dan@gmail.com')
   })
 
 })

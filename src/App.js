@@ -233,7 +233,7 @@ const App = () => {
         </Route>
         <Route path='/homepage'>
           < Nav setUser={ setUser } setUsername={ setUsername } setEmail={ setEmail }/>
-          < Homepage user={user} registerDog={ registerDog } setDogId={setDogId}/>
+          < Homepage user={user} registerDog={ registerDog } setDogId={setDogId} dataUser={dataUser}/>
         </Route>
         <Route path='/about'>
           < Nav setUser={ setUser } setUsername={ setUsername } setEmail={ setEmail }/>

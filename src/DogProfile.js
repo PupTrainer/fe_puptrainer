@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 const DogProfile = ({ id, name, age, breed, dogSkills, skills}) => {
 
+
     let knownSkillIds = []
     const knownSkills = skills.map(skill => {
         knownSkillIds.push(skill.id)

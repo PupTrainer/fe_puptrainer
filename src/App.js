@@ -17,6 +17,7 @@ const App = () => {
   const [username, setUsername] = useState('') 
   const [email, setEmail] = useState('')
   const [dogSkills, setDogSkills] = useState('')
+  const [dogId, setDogId] = useState(0)
 
 
   const [ skills, setSkills ] = useState([])
@@ -110,12 +111,34 @@ const App = () => {
     }
   `
 
+  const ADD_DOGSKILL = gql`
+  mutation addDogSkill (
+    $dogId: Int!
+    $skillId: Int!
+    $passed: Boolean!
+  ){
+    addDogSkill(input: {
+      dogId: $dogId
+      skillId: $skillId
+      passed: $passed
+    } ) {
+      id
+      dogId
+      skillId
+      passed
+    }
+  }
+  `
+
   const [createUser, { dataUser, errorUser, loadingUser }] = useMutation(CREATE_USER)
   const [createDog, { dataDog, errorDog, loadingDog }] = useMutation(CREATE_DOG)
   const [fetchUser, { dataFetchUser, errorFetchUser, loadingFetchuser }] = useLazyQuery(FETCH_USER, {
     fetchPolicy: 'network-only',
     nextFetchPolicy: 'network-only'
   })
+  const [addDogSkill, { dataDogSkill, errorDogSkill, loadingDogSkill }] = useMutation(ADD_DOGSKILL)
+
+
 
   const loginUser = (username, email) => {
     setUsername(username)
@@ -173,6 +196,28 @@ const App = () => {
     }
   }
 
+  const registerDogSkill = (skillId) => {
+    addDogSkill({
+      variables: {
+        dogId: parseInt(dogId),
+        skillId: parseInt(skillId),
+        passed: true
+      }
+    }).then(() => 
+      fetchUser({
+        variables: {
+          email: email
+        }
+      })
+    ).then((data) => {
+      console.log(data, 'DATA')
+      setUser(data.data.fetchUser)
+    })
+    if(errorDogSkill) {
+      console.warn(errorDogSkill)
+    }
+  }
+
   return (
     <div>
       <Switch>
@@ -181,7 +226,7 @@ const App = () => {
         </Route>
         <Route path='/homepage'>
           < Nav setUser={ setUser } setUsername={ setUsername } setEmail={ setEmail }/>
-          < Homepage user={user} registerDog={ registerDog }/>
+          < Homepage user={user} registerDog={ registerDog } setDogId={setDogId}/>
         </Route>
         <Route path='/about'>
           < Nav setUser={ setUser } setUsername={ setUsername } setEmail={ setEmail }/>
@@ -220,7 +265,7 @@ const App = () => {
           return (
             <>
               <Nav setUser={ setUser } setUsername={ setUsername } setEmail={ setEmail } />
-              <Skill {...foundSkill} />
+              <Skill {...foundSkill} registerDogSkill={registerDogSkill} />
             </>
           )
         }} 

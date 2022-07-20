@@ -16,7 +16,8 @@ describe('Skill Page', () => {
             id: "1",
             name: "Harold",
             age: 5,
-            breed: "Mix"
+            breed: "Mix",
+            skills: []
           }]
           console.log('Working')
         })
@@ -91,5 +92,43 @@ describe('Skill Page', () => {
 
   it('should have a Complete Training button', () => {
     cy.get('.training-btn').should('have.text', 'Complete Training')
+  })
+
+  it('should redirect back to the dog profile when we click the Complete Training button', () => {
+    cy.get('.training-btn').click()
+    cy.url().should('eq', 'http://localhost:3000/1')
+  })
+
+  it('should not have the skill in the training section and populate the skill learned in the known skills', () => {
+    cy.intercept('POST', 'https://pup-trainer-api.herokuapp.com/graphql', (req) => {
+      const { body } = req
+      aliasQuery(req, 'fetchUser')
+      if (hasOperationName(req, 'fetchUser')) {
+        req.alias = 'gqlfetchUserQuery'
+        req.reply((res) => {
+          res.body.data.fetchUser.email = 'dan@gmail.com'
+          res.body.data.fetchUser.id = 1
+          res.body.data.fetchUser.username = 'dan'
+          res.body.data.fetchUser.dogs = [{
+            id: "1",
+            name: "Harold",
+            age: 5,
+            breed: "Mix",
+            skills: [{
+              id: "1",
+              name: "Down"
+            }]
+          }]
+          console.log('Working')
+        })
+      } else {
+        console.log('Not working')
+      }
+    })
+    
+  cy.get('.training-btn').click()
+  cy.get('.dog-known-skills').children().should('have.length', 1)
+  cy.get('.dog-known-skills').children().should('have.text', 'Down')
+
   })
 })

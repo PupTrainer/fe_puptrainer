@@ -190,7 +190,7 @@ describe('Homepage Sad Path', () => {
     cy.get('.button').click()
   })
 
-  it.only('should not be able to create a pet without all of the pet info', () => {
+  it('should not be able to create a pet without all of the pet info', () => {
     cy.intercept('POST', 'https://pup-trainer-api.herokuapp.com/graphql', (req) => {
       const { body } = req
       aliasMutation(req, 'createDog')

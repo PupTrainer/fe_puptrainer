@@ -45,6 +45,19 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
  
 # **The Team ✨**
 
+<table>
+<tr>
+   <td align="center"><a href="https://github.com/DanielN88"><img src="https://avatars.githubusercontent.com/u/92230099?v=4" width="100px;" alt=""/><br /><sub><b>Daniel N. (he/him)</b></sub></a><br /><a href="https://www.linkedin.com/in/daniel-r-neer/" title ="Linked In"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a><br /><a href="https://github.com/PupTrainer/fe_puptrainer/commits?author=DanielN88" title="Code">💻</a> <a href="" title="Ideas, Planning, & Feedback">�</a> <a href="" title="Tests">⚠️</a> <a href="" title="Reviewed Pull Requests">👀</a></td>
+   
+  <td align="center"><a href="https://github.com/Jlavarine"><img src="https://avatars.githubusercontent.com/u/96446170?v=4" width="100px;" alt=""/><br /><sub><b>Jacob L. (he/him)</b></sub></a><br /><a href="https://www.linkedin.com/in/jacoblavarine/" title ="Linked In"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a><br /><a href="https://github.com/PupTrainer/fe_puptrainer/commits?author=Jlavarine" title="Code">💻</a> <a href="" title="Ideas, Planning, & Feedback">�</a> <a href="" title="Tests">⚠️</a> <a href="" title="Reviewed Pull Requests">👀</a></td>
+  
+  <td align="center"><a href="https://github.com/aominhlong"><img src="https://avatars.githubusercontent.com/u/89413678?v=4" width="100px;" alt=""/><br /><sub><b>Nicholas A. (he/him)</b></sub></a><br /><a href="https://www.linkedin.com/in/nicholas-ao/" title ="Linked In"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a><br /><a href="https://github.com/PupTrainer/fe_puptrainer/commits?author=aominhlong" title="Code">💻</a> <a href="" title="Ideas, Planning, & Feedback">�</a> <a href="" title="Tests">⚠️</a> <a href="" title="Reviewed Pull Requests">👀</a></td>
+  
+  <td align="center"><a href="https://github.com/JoshMallery"><img src="https://avatars.githubusercontent.com/u/96563007?v=4" width="100px;" alt=""/><br /><sub><b>Josh M. (he/him)</b></sub></a><br /><a href="https://www.linkedin.com/in/joshmallery/" title ="Linked In"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a><br /><a href="https://github.com/PupTrainer/fe_puptrainer/commits?author=JoshMallery" title="Code">💻</a> <a href="" title="Ideas, Planning, & Feedback">�</a> <a href="" title="Tests">⚠️</a> <a href="" title="Reviewed Pull Requests">👀</a></td>
+
+</tr>
+</table>
+
 Thanks go to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->

@@ -2,13 +2,14 @@
   border-bottom: 0.12rem solid black;
   display: flex;
   height: 5rem;
+  background-color: #8da5cc;
 }
 
 .logo {
   height: 5rem;
   width: 5rem;
   margin-right: 20rem;
-  border-radius: 1.8rem;
+  border-radius: 12rem;
 }
 
 .links {
@@ -25,7 +26,6 @@
   border-radius: 0.6rem;
   padding: 0.3rem;
   margin: 0rem 6rem;
-  font-size: 1.5rem;
 }
 
 .nav-button::hover {
@@ -34,4 +34,8 @@
 
 .nav-button::active {
   text-decoration: underline;
+}
+
+.links {
+  background-color: #8da5cc;
 }/*# sourceMappingURL=Nav.css.map */

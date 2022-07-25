@@ -17,10 +17,11 @@ const Form = ({ user, registerDog }) => {
   
   return (
     <div className='form-container'>
-      <form onSubmit={(event) => submitDog(event)}>
+      <form className='form-style' onSubmit={(event) => submitDog(event)}>
         <h2 className='form-title'>Register Pets</h2>
         <div className='input-fields'>
           <input
+            className='input-styling'
             type='text'
             placeholder='Name'
             value={name}
@@ -29,6 +30,7 @@ const Form = ({ user, registerDog }) => {
           >
           </input>
           <input
+            className='input-styling'
             type='number'
             placeholder='Age'
             value={age}
@@ -37,6 +39,7 @@ const Form = ({ user, registerDog }) => {
           >
           </input>
           <input
+            className='input-styling'
             type='text'
             placeholder='Breed'
             value={breed}

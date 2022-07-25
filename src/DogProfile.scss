@@ -34,10 +34,13 @@
     border-radius: .8rem;
     width: 75%;
     margin: 3rem;
+    background-color: #8da5cc;
+    box-shadow: .75em .75em 1.2em;
 }
 
 .dog-training > .training-title {
     text-align: center;
+    background-color: #8da5cc;
 }
 
 .skills {
@@ -45,6 +48,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     text-align: center;
+    background-color: #8da5cc;
 }
 
 .skills > h1 {
@@ -65,6 +69,8 @@
     text-align: center;
     padding: .8rem;
     margin: .8rem;
+    background-color: #8da5cc;
+    box-shadow: .75em .75em 1.2em;
 }
 
 .dog-known-skills {
@@ -73,6 +79,8 @@
     border: 2px solid black;
     border-radius: .8rem;
     padding: .8rem;
+    background-color: #8da5cc;
+    box-shadow: .75em .75em 1.2em;
 }
 
 .dog-known-skills > h1{
@@ -104,10 +112,28 @@
     border-radius: .8rem;
     height: 4rem;
     width: 8rem;
+    transition: transfrom .2s;
+    cursor: pointer;
+}
+
+.training-skill:hover {
+    transform: scale(1.1); 
 }
 
 .training-skill-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #8da5cc;
 }
+
+.profile-text-styling {
+    background-color: #8da5cc;
+}
+
+.known-skills-container-style {
+    border: 1px solid black;
+    margin: 5px;
+    border-radius: 12px;
+}
+

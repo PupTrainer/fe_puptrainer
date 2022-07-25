@@ -17,11 +17,11 @@ const Info = ({ user, setDogId }) => {
                 <div className='user-info'>
                     <h2>User Information</h2>
                     <hr></hr>
-                    <p><span>Username:</span> {user.username}</p>
-                    <p><span>Email:</span> {user.email}</p>
+                    <p className='p-styling'><span className='span-styling'>Username:</span> {user.username}</p>
+                    <p className='p-styling'><span className='span-styling'>Email:</span> {user.email}</p>
                 </div>
                 <hr></hr>
-                    <h3>Pets:</h3>
+                    <h3 className='h3-styling'>Pets:</h3>
                 <div className='pets'>
                     { dogList }
                 </div>

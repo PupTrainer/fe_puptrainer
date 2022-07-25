@@ -78,7 +78,7 @@ describe('Login', () => {
         console.log('Not working')
       }
     })
-  
+
     cy.get('[placeholder="Username"]').type('dan')
     cy.get('[placeholder="Email"]').type('dan@gmail.com')
     cy.get('.button').click()
@@ -88,5 +88,37 @@ describe('Login', () => {
     cy.get('.user-info > :nth-child(3)').should('have.text', 'Username: dan')
     cy.get('.user-info > :nth-child(4)').should('have.text', 'Email: dan@gmail.com')
   })
+
+})
+
+describe('Login Sad Path', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/')
+  })
+
+  it('should not be able to login with invalid user information', () => {
+    cy.intercept('POST', 'https://pup-trainer-api.herokuapp.com/graphql', (req) => {
+      const { body } = req
+      aliasQuery(req, 'fetchUser')
+      if (hasOperationName(req, 'fetchUser')) {
+        req.alis = 'gqlfetchUserQuery'
+        req.reply((res) => {
+          res.body.data = undefined
+          console.log('Working')
+        })
+      } else {
+        console.log('Not working')
+      }
+    })
+
+    cy.get('[placeholder="Username"]').type('invalidUser')
+    cy.get('[placeholder="Email"]').type('invalid@gmail.com')
+    cy.get('.button').click()
+
+    cy.get('h2').contains('Invalid User')
+
+
+  })
+
 
 })

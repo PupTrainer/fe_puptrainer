@@ -11,8 +11,8 @@ const DogProfile = ({ id, name, age, breed, dogSkills, skills}) => {
     const knownSkills = skills.map(skill => {
         knownSkillIds.push(skill.id)
             return (
-                <div>
-                    <p id={skill.id}>{skill.name}</p>
+                <div className="known-skills-container-style">
+                    <p className='known-skills-container-text' id={skill.id}>{skill.name}</p>
                 </div>
             )
     })
@@ -39,9 +39,9 @@ const DogProfile = ({ id, name, age, breed, dogSkills, skills}) => {
                     <div className='dog-info'>
                         <img className='dog-img' src={dogimg} alt='Dog silhouette'/>
                         <div className='dog-details'>
-                            <p>Name: { name }</p>
-                            <p>Age: { age }</p>
-                            <p>Breed: { breed }</p>
+                            <p className='profile-text-styling'>Name: { name }</p>
+                            <p className='profile-text-styling'>Age: { age }</p>
+                            <p className='profile-text-styling'>Breed: { breed }</p>
                         </div>
                     </div>
                     <div className='dog-known-skills-container'>

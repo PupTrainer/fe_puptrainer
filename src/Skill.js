@@ -9,12 +9,12 @@ const Skill = ({ name, id, description, level, criteria, youtubeLink, registerDo
             <div className='skill-info'>
               <h2 className='skill-title'>Skill Description</h2>
               <p className='skill-name'>{name}</p>
-              <p>Level: {level}</p>
-              <p>{description}</p>
+              <p className='skill-level'>Level: {level}</p>
+              <p className='skill-des'>{description}</p>
             </div>
             <div className='pass'>
               <p className='requirement'>Pass Requirements:</p>
-              <p>{criteria}</p>
+              <p className='req-des'>{criteria}</p>
             </div>
         </div>
           <div>

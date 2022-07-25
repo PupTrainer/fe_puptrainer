@@ -19,6 +19,8 @@
   margin: 2rem;
   border: 2px solid black;
   border-radius: 12px;
+  background-color: #8da5cc;
+  box-shadow: 0.75em 0.75em 1.2em;
 }
 
 .content {
@@ -35,4 +37,8 @@
 
 .about-page {
   overflow: inherint;
+}
+
+.text-styling {
+  background-color: #8da5cc;
 }/*# sourceMappingURL=About.css.map */

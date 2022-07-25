@@ -17,7 +17,7 @@ const Login = ({loginUser}) => {
             <h1 className='title'>Welcome to PupTrainer</h1>
         <div className='login-page'>
             <div className='input-container'>
-                <p>Please login</p>
+                <p className='please-login'>Please login</p>
                 <input
                 className='input'
                 type='text'
@@ -34,18 +34,18 @@ const Login = ({loginUser}) => {
                 onChange={(event) => setEmail(event.target.value)}
                 required
                 />
-                {username && email ? <Link to="/homepage">
+                {username && email ? <Link className='homepage-button' to="/homepage">
                   <input type="submit" placeholder="Login" className='button' onClick={() => {
                     loginUser(username, email);
                     clearInputs();
                   }}/>
-                </Link>: <Link to="/">
+                </Link>: <Link className='submit-styling' to="/">
                   <input type="submit" placeholder="Login" className='button' onClick={() => {
                     loginUser(username, email);
                     clearInputs();
                   }}/>
                 </Link>}
-                  <p><Link to="create-user">Register here</Link></p>
+                  <p><Link  className='register-here' to="create-user">Register here</Link></p>
                 
             </div>
         </div>

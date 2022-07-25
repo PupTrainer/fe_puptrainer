@@ -19,6 +19,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #8da5cc;
+  box-shadow: 0.75em 0.75em 1.2em;
 }
 
 .input {
@@ -30,5 +32,25 @@
 .button {
   height: 1.2rem;
   width: 6rem;
+  height: 1.4rem;
   margin: 0.3rem;
+  font-size: 1rem;
+}
+
+.register-here {
+  background-color: #8da5cc;
+  font-size: 1.5rem;
+}
+
+.please-login {
+  background-color: #8da5cc;
+  font-size: 1.8rem;
+}
+
+.submit-styling {
+  background-color: #8da5cc;
+}
+
+.homepage-button {
+  background-color: #8da5cc;
 }/*# sourceMappingURL=login.css.map */

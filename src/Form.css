@@ -9,10 +9,13 @@
   width: 60%;
   border: solid 2px black;
   border-radius: 0.8rem;
+  background-color: #8da5cc;
+  box-shadow: 0.75em 0.75em 1.2em;
 }
 
 .form-title {
   font-size: 3rem;
+  background-color: #8da5cc;
 }
 
 .form-container > input {
@@ -26,10 +29,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #8da5cc;
 }
 
 input {
   margin-bottom: 1rem;
+  height: 2rem;
+  width: 7rem;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
 
 form {
@@ -38,4 +46,14 @@ form {
   justify-content: center;
   align-items: center;
   height: 75vh;
+}
+
+.form-style {
+  background-color: #8da5cc;
+}
+
+.input-styling {
+  font-size: 2rem;
+  height: 2rem;
+  width: 10rem;
 }/*# sourceMappingURL=Form.css.map */

@@ -7,9 +7,12 @@
   border: solid 2px black;
   border-radius: 0.8rem;
   height: 75vh;
+  background-color: #8da5cc;
+  box-shadow: 0.75em 0.75em 1.2em;
 }
 
 .user-info {
+  background-color: #8da5cc;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,6 +21,7 @@
 .user-info > h2 {
   margin: 1rem;
   font-size: 2.5rem;
+  background-color: #8da5cc;
 }
 
 span {
@@ -29,13 +33,38 @@ span {
   border-radius: 10px;
   height: 50px;
   width: 75px;
+  transition: transfrom 0.2s;
+  cursor: pointer;
+}
+
+.dog-btn:hover {
+  transform: scale(1.1);
+}
+
+.dog-btn {
+  background-color: #8da5cc;
 }
 
 .pets {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  background-color: #8da5cc;
 }
 
 hr {
   width: 80%;
+}
+
+.p-styling {
+  background-color: #8da5cc;
+  font-size: 1.5rem;
+}
+
+.span-styling {
+  background-color: #8da5cc;
+}
+
+.h3-styling {
+  background-color: #8da5cc;
+  font-size: 1.5rem;
 }/*# sourceMappingURL=Info.css.map */

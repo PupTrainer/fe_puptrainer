@@ -30,7 +30,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
  ## Application Login
  
- - When you first visit the PupTrainer main page you will see a login page. If you have already made an account you can login using your correct credentials. Otherwise please click on the create an account and enter in your desired username and email. Once submitted you will recieve a confirmation message that the account has been created. Please rememeber the credentials you entered and use them to login into your account. Please follow the features list below to navigate through the application. 
+ - When you first visit the PupTrainer main page you will see a login page. If you have already made an account you can login using your correct credentials. Otherwise please click on the register here and enter in your desired username and email. Once submitted you will recieve a confirmation message that the account has been created. Click on the login here button to then be taken back to the main login page. Please rememeber the credentials you entered and use them to login into your account. Once your account has been created follow the features list below to navigate through the application. 
  
  
  ## Features

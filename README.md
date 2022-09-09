@@ -27,6 +27,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
  3. Once you have cloned the repo, change into the directory and install the project dependencies. Run `npm install` or `npm i` to install project dependencies.
  4. Run `npm start` in the terminal to see the page. You will need to copy and paste the local server from the terminal and paste it into your browser. The local server should be simialiar to, "http://localhost:3000/". `Control + C` is the command to stop running the local server. Closing the terminal without stopping the server first could allow the server to continue to run in the background and cause problems.
 
+
+ ## Application Login
+ 
+ - When you first visit the PupTrainer main page you will see a login page. If you have already made an account you can login using your correct credentials. Otherwise please click on the create an account and enter in your desired username and email. Once submitted you will recieve a confirmation message that the account has been created. Please rememeber the credentials you entered and use them to login into your account. Please follow the features list below to navigate through the application. 
+ 
+ 
  ## Features
  
  

@@ -6,7 +6,7 @@
 
 
 # Intro
-This application is the front-end repository for [PupTrainer](https://pup-trainer.herokuapp.com) , the back-end repository can be found [HERE](https://github.com/PupTrainer/be_puptrainer) .
+This application is the front-end repository for PupTrainer, the back-end repository can be found [HERE](https://github.com/PupTrainer/be_puptrainer) .
 
 # Technologies Used
 - React

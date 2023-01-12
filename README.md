@@ -38,13 +38,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
  
  ### Login
  
- ![PT-Login Workflow](https://user-images.githubusercontent.com/96563007/180271248-df769288-0b50-4894-9744-e1245a71cf01.gif)
+ ![PT-Login Workflow](https://user-images.githubusercontent.com/96446170/212123869-02a39df1-400f-4767-9ac0-9dfeeb258f85.png)
+
  
  - When you first visit the PupTrainer page, you have the option to either create an account if you are a new user, or login if you are already a user.
  
  ### Registering a dog
  
- ![Register-pet workflow](https://user-images.githubusercontent.com/96563007/180271586-e2e175b2-adac-4c77-be65-1c2ecf30aea7.gif)
+ ![Register-pet workflow](https://terminal.turing.edu/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBcWsxIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6ebf341db2c2f9fbe15733d7d9a74363f1462137/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RW5KbGMybDZaVjkwYjE5bWFYUmJCMmtDSUFOcEFsZ0MiLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--2f17d7aa4c6dab9e37d7af2bdbb7d452b5fd576d/Screen%20Shot%202022-07-26%20at%2012.26.47%20PM.png)
  
  - After logging in, the user is greeted with the homepage showing them their user information, as well as a form to register a dog with PupTrainer.
  - Registering a dog requires the dog's name, age, and breed.
@@ -52,14 +53,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
  ### Dog Profile
  
- ![Dog-profile-workflow](https://user-images.githubusercontent.com/96563007/180272127-96716928-9f30-42f5-8f17-3302f6a4c687.gif)
+ ![Dog-profile-workflow](https://terminal.turing.edu/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBcW8xIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--46cbecc2cc5bd84c9921306c6579d21d2b364ada/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RW5KbGMybDZaVjkwYjE5bWFYUmJCMmtDSUFOcEFsZ0MiLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--2f17d7aa4c6dab9e37d7af2bdbb7d452b5fd576d/Screen%20Shot%202022-07-26%20at%2012.28.10%20PM.png)
  
  - To view the dog profile page, the user will select the dog they want to view by clicking on their dog's button under the Pets section of user information.
  - This will bring the user to that dog's profile page where information such as name,age,breed,known skills, as well as links for training courses the dog has not finished.
  
  ### Skill Page
  
- ![Skill-Add workflow](https://user-images.githubusercontent.com/96563007/180272732-35d07b8b-388f-40e8-8bea-72d3f5d4e058.gif)
+ ![Skill-Add workflow](https://terminal.turing.edu/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBcXMxIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3d2c86bddc5930e841506054416e98b85e8b5bc7/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RW5KbGMybDZaVjkwYjE5bWFYUmJCMmtDSUFOcEFsZ0MiLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--2f17d7aa4c6dab9e37d7af2bdbb7d452b5fd576d/Screen%20Shot%202022-07-26%20at%2012.27.56%20PM.png)
  
  - To view a specific skill page, the user can go to their dog profile page and click on a specific skill under the `Training` section.
  - The user can see description of the skill, the level of the skill, the requirements to pass the skill, and a detailed video to walk a user through having their dog learn the skill.
@@ -67,9 +68,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
  - The Dog Profile page will update to reflect specific skills that have been learned after clicking the `Complete Training` button.
  
  ### About Page
- 
- ![About Us](https://user-images.githubusercontent.com/96563007/180274333-bed19288-e011-4eea-a2f6-7f5eae3bc633.gif)
- 
+  
  - The user can navigate to the About page to view all of the PupTrainer team member's fluffy friends.
   
 # **The Team ✨**
